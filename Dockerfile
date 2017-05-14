@@ -7,3 +7,4 @@ RUN apk -U add curl
 COPY --from=build /go/server /server
 EXPOSE 80
 CMD ["/server"]
+HEALTHCHECK CMD curl --fail http://localhost/ || exit 1
