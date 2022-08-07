@@ -23,7 +23,7 @@ func main() {
     http.HandleFunc("/", serveHTTP) // set router
     rand.Seed( time.Now().UnixNano())
     coin = rand.Intn(2)
-    fmt.Println(coin)
+    fmt.Println("Flipped coin: ", coin)
 
     err := http.ListenAndServe(":80", nil) // set listen port
     if err != nil {
